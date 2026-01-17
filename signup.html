@@ -1,0 +1,66 @@
+<!-- signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <style>
+    body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(135deg, #667eea, #764ba2); font-family: "Poppins", sans-serif; }
+    .form-box { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); width: 360px; }
+    .title { text-align: center; font-size: 2rem; margin-bottom: 20px; color: #333; }
+    .input-box { position: relative; margin-bottom: 25px; }
+    .input-box input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; outline: none; }
+    .btn { width: 100%; padding: 12px; background: #667eea; border: none; border-radius: 8px; color: #fff; font-size: 1rem; cursor: pointer; }
+    .btn:hover { background: #5a67d8; }
+    .login-link { margin-top: 15px; text-align: center; }
+    a { text-decoration: none; color: #667eea; }
+  </style>
+</head>
+<body>
+  <div class="form-box register">
+    <h2 class="title">Sign Up</h2>
+    <form id="signupForm">
+      <div class="input-box">
+        <input type="text" id="username" placeholder="Username" required />
+      </div>
+      <div class="input-box">
+        <input type="email" id="email" placeholder="Email" required />
+      </div>
+      <div class="input-box">
+        <input type="password" id="password" placeholder="Password" required />
+      </div>
+      <button type="submit" class="btn">Sign Up</button>
+      <div class="login-link">Already have an account? <a href="login.html">Login</a></div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("signupForm");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let username = document.getElementById("username").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+
+      let newUser = { username, email, password };
+
+      // Get existing users or empty array
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Add new user
+      users.push(newUser);
+
+      // Save updated users array
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("Account created successfully! Please log in.");
+
+      // Redirect to login page
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

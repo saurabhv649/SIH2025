@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Problem Portal</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+  <div class="sidebar">
+    <h2>Categories</h2>
+    <ul>
+      <li onclick="showCategory('banking')">🏦 Banking</li>
+      <li onclick="showCategory('crop')">🌱 Pest / Crop</li>
+      <li onclick="showCategory('other')">⚡ Other Issues</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <h1 class="welcome">Problem Portal - Welcome <span id="userName"></span></h1>
+    <p class="subtitle">Select a category from the left and submit your problem</p>
+
+    <!-- Banking -->
+    <div class="category" id="banking">
+      <h2>Banking</h2>
+      <form onsubmit="return handleSubmit(event)">
+        <label><input type="radio" name="bank"> Loan is pending</label>
+        <label><input type="radio" name="bank"> Collateral issue</label>
+        <label><input type="radio" name="bank"> Credit issue</label>
+        <label><input type="radio" name="bank"> Document verification</label>
+        <label><input type="radio" name="bank"> Lack of knowledge</label>
+        <p><b>Other issue</b></p>
+        <textarea placeholder="Enter issue"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Crop -->
+    <div class="category" id="crop">
+      <h2>Pest / Crop</h2>
+      <form onsubmit="return handleSubmit(event)">
+        <label><input type="radio" name="crop"> Lack of irrigation</label>
+        <label><input type="radio" name="crop"> Low crop price</label>
+        <label><input type="radio" name="crop"> Lack of modern equipment</label>
+        <label><input type="radio" name="crop"> Expensive/low quality seeds</label>
+        <label><input type="radio" name="crop"> Crop diseases & pest attack</label>
+        <label><input type="radio" name="crop"> Crop insurance</label>
+        <p><b>Other problem</b></p>
+        <textarea placeholder="Enter problem"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Other -->
+    <div class="category" id="other">
+      <h2>Other Issues</h2>
+      <form onsubmit="return handleSubmit(event)">
+        <label><input type="radio" name="other"> Water supply</label>
+        <label><input type="radio" name="other"> Electricity</label>
+        <label><input type="radio" name="other"> Roads</label>
+        <label><input type="radio" name="other"> Education</label>
+        <label><input type="radio" name="other"> Health services</label>
+        <p><b>Other</b></p>
+        <textarea placeholder="Enter issue"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

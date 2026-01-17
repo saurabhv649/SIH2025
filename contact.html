@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Details</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+  <div class="contact-container">
+    <h1 class="welcome">Final Step 💡</h1>
+    <p class="subtitle">Please provide your contact details so our counselors can reach you.</p>
+
+    <form class="contact-form" onsubmit="return saveContact(event)">
+      <div class="input-box">
+        <label for="name">Full Name (optional)</label>
+        <input type="text" id="name" placeholder="Enter your name">
+      </div>
+
+      <div class="input-box">
+        <label for="phone">📞 Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+      </div>
+
+      <div class="input-box">
+        <label for="address">🏠 Address</label>
+        <textarea id="address" placeholder="Enter your address" required></textarea>
+      </div>
+
+      <button type="submit">Submit Details</button>
+    </form>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
